@@ -5,7 +5,7 @@ function App() {
   const [images, setImages] = useState([]);
 
   useEffect(() => {
-    fetch("/images")
+    fetch("https://sample-api-rciv.onrender.com/images")
       .then((r) => r.json())
       .then(setImages);
   }, []);
