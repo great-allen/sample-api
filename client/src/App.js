@@ -16,7 +16,7 @@ function App() {
     e.preventDefault();
     const formData = new FormData();
     formData.append("image", e.target.image.files[0]);
-    fetch("/images", {
+    fetch("https://sample-api-rciv.onrender.com/images", {
       method: "POST",
       body: formData,
     })
