@@ -5,7 +5,7 @@ function App() {
   const [images, setImages] = useState([]);
 
   useEffect(() => {
-    fetch("https://sample-api-rciv.onrender.com/images")
+    fetch("process.env.REACT_APP_PUBLIC_IMAGES_PATH/images")
       .then((r) => r.json())
       .then(setImages);
   }, []);
@@ -16,7 +16,7 @@ function App() {
     e.preventDefault();
     const formData = new FormData();
     formData.append("image", e.target.image.files[0]);
-    fetch("https://sample-api-rciv.onrender.com/images", {
+    fetch("process.env.REACT_APP_PUBLIC_IMAGES_PATH/images", {
       method: "POST",
       body: formData,
     })

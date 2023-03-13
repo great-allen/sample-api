@@ -15,7 +15,7 @@ class ImagesController < ApplicationController
     filename = UUIDTools::UUID.random_create.to_s
 
     # Save the file to the public/images directory
-    File.open(Rails.root.join('public', 'images', filename), 'wb') do |file|
+    File.open(Rails.root.join(ENV['PUBLIC_IMAGES_PATH'], filename), 'wb') do |file|
       file.write(uploaded_file.read)
     end
 
